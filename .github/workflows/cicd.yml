@@ -45,9 +45,6 @@ jobs:
       - name: Установка зависимостей
         run: pip install -r requirements.txt
 
-#      - name: Линтинг
-#        run: flake8 women/views.py
-
       - name: Тесты
         run: python manage.py test
         env:
@@ -61,6 +58,13 @@ jobs:
           DB_PORT: ${{ env.DB_PORT }}
           DB_HOST: ${{ env.DB_HOST }}
 
+      - name: Деплой
+        uses: appleboy/ssh-action@main
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          script: ${{ secrets.SSH_COMMAND }}
 
 
 
