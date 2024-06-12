@@ -59,7 +59,7 @@ jobs:
           DB_HOST: ${{ env.DB_HOST }}
 
       - name: Деплой
-        uses: appleboy/ssh-action@main
+        uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
