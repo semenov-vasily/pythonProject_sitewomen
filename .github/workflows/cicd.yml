@@ -65,6 +65,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           password: ${{ secrets.SSH_PASSWORD }}
           script: ${{ secrets.SSH_COMMAND }}
+          passphrase: ${{ secrets.SSH_PASSPHRASE }}
 
 
 
