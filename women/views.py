@@ -193,7 +193,7 @@ class ContactFormView(LoginRequiredMixin, DataMixin, FormView):
 
 
 def login(request):
-    return HttpResponse("Авторизация3")
+    return HttpResponse("Авторизация")
 
 
 # def show_category(request, cat_slug):
